@@ -79,6 +79,10 @@ CONFIG_FILE_OPTIONS = {
         'password': {
             'type': 'string',
             'default': None
+        },
+        'apikey': {
+            'type': 'string',
+            'default': None
         }
     },
     'api': {

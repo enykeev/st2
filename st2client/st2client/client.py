@@ -37,7 +37,7 @@ DEFAULT_API_VERSION = 'v1'
 
 class Client(object):
     def __init__(self, base_url=None, auth_url=None, api_url=None, api_version=None, cacert=None,
-                 debug=False, token=None):
+                 debug=False, token=None, apikey=None):
         # Get CLI options. If not given, then try to get it from the environment.
         self.endpoints = dict()
 
@@ -78,6 +78,11 @@ class Client(object):
             os.environ['ST2_AUTH_TOKEN'] = token
 
         self.token = token
+
+        if apikey:
+            os.environ['ST2_API_KEY'] = apikey
+
+        self.apikey = apikey
 
         # Instantiate resource managers and assign appropriate API endpoint.
         self.managers = dict()
